@@ -22,6 +22,7 @@
             option.textContent = name;
             select.appendChild(option);
         });
+        
 
         // Set initial image to first character
         image.src = "images/" + select.value + ".jpeg";
@@ -29,7 +30,7 @@
         select.addEventListener("change", function () {
             image.src = "images/" + select.value + ".jpeg";
         });
-        
+
     </script>
 </body>
 </html>
