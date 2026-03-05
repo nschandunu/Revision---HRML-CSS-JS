@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revision - HTML, CSS, JavaScript</title>
+</head>
+<body>
+    <select id="characterSelect">
+    </select>
+    <br><br>
+    <img id="characterImage" src="" alt="Character Image">
+
+    <script>
+        const characters = ["Garfield", "Odie", "Nermal", "Pooky", "Jon"];
+        const select = document.getElementById("characterSelect");
+        const image = document.getElementById("characterImage");
+
+        characters.forEach(function (name) {
+            const option = document.createElement("option");
+            option.value = name;
+            option.textContent = name;
+            select.appendChild(option);
+        });
+
+        // Set initial image to first character
+        image.src = "images/" + select.value + ".jpg";
+
+        select.addEventListener("change", function () {
+            image.src = "images/" + select.value + ".jpg";
+        });
+    </script>
+</body>
+</html>
