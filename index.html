@@ -3,32 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revision - HTML, CSS, JavaScript</title>
+    <title>Football Clubs</title>
 </head>
 <body>
-    <select id="characterSelect">
+    <select id="clubSelect">
     </select>
     <br><br>
-    <img id="characterImage" src="" alt="Character Image" style="width: 400px; height: 600px; object-fit: cover;">
+    <img id="clubImage" src="" alt="Club Badge" style="width: 400px; height: 400px; object-fit: contain;">
 
     <script>
-        const characters = ["Garfield", "Odie", "Nermal", "Pooky", "Jon"];
-        const select = document.getElementById("characterSelect");
-        const image = document.getElementById("characterImage");
+        const clubs = [
+            { name: "Arsenal", file: "Arsenal_FC.svg" },
+            { name: "FC Barcelona", file: "FC_Barcelona_(crest).svg.png" },
+            { name: "Manchester United", file: "Manchester_United_FC_crest.svg.png" },
+            { name: "Manchester City", file: "Manchester_City_FC_badge.svg.png" },
+            { name: "Bayern München", file: "FC_Bayern_München_logo_(2024).svg.png" },
+            { name: "Real Madrid", file: "Real_Madrid_CF.svg.png" },
+            { name: "Liverpool", file: "Liverpool_FC.svg.png" },
+            { name: "Tottenham Hotspur", file: "Tottenham_Hotspur.svg.png" },
+            { name: "Paris Saint-Germain", file: "Paris_Saint-Germain_F.C..svg.png" },
+            { name: "AC Milan", file: "Logo_of_AC_Milan.svg.png" }
+        ];
+        const select = document.getElementById("clubSelect");
+        const image = document.getElementById("clubImage");
 
-        characters.forEach(function (name) {
+        clubs.forEach(function (club) {
             const option = document.createElement("option");
-            option.value = name;
-            option.textContent = name;
+            option.value = club.file;
+            option.textContent = club.name;
             select.appendChild(option);
         });
-        
 
-        // Set initial image to first character
-        image.src = "images/" + select.value + ".jpeg";
+        // Set initial image to first club
+        image.src = "images/" + select.value;
 
         select.addEventListener("change", function () {
-            image.src = "images/" + select.value + ".jpeg";
+            image.src = "images/" + select.value;
         });
 
     </script>
